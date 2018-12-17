@@ -2,516 +2,419 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>个人网站</title>
-	<link rel="stylesheet" href="css/index.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/index.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<style>
+		*{margin:0;padding:0;}
+		li{list-style:none;}
+		a{text-decoration:none;outline: none;}
+		a:hover{text-decoration:none;}
+		.nav{width:100%;height:auto;background:rgb(0,0,0);padding:15px 0;margin:0 auto;position: fixed;z-index: 1000;}
+		.container{width:100%;height:58px;line-height: 58px;}
+		.col-lg-6:nth-child(1){padding-left: 10%}
+		.col-lg-6 a img{width:210px;}
+		.col-lg-6 ul{height:50px;}
+		.col-lg-6 ul li{float:left;line-height: 50px;padding:0 15px;}
+		.col-lg-6 ul li a{color:white;}
+		.container .row{position: relative;}
+		.nav-menu{position: absolute;top:60px;width:100%;height:300px;/*border-top: 3px green;*/display: none;z-index: 99}
+		.nav-menu ul li{line-height: 50px;padding:0 15px;}
+		.nav-menu ul li a{color:white;}
+		.action{background: #fdd947;border-radius:2px;}
+		.action a{color:#000!important;}
+		.menu{color:white;font-size: 40px;line-height: 58px;float:right;display:none;z-index: 1000}
+		
+		.banner{padding-top:58px;}
+		.item img{width:100%;}
+		.carousel-caption{top:0;}
+		.carousel-caption h1{font-size: 3em;margin-top: 25%;}
+		.carousel-caption p{font-size: 1.2em;margin-top: 6%;margin-bottom: 4%;}
+		.carousel-caption div{width:80px;height:40px;background:#333;margin:0 auto;border-radius: 3px;}
+		.carousel-caption div a{color:white;line-height: 40px}
+		@media screen and (max-width: 1280px) {
+			.carousel-caption h1{font-size: 2em;}
+            .carousel-caption p{font-size: 0.8em}
+		}
+		
+		.pic{width:100%;height:600px;background: black;}
+		.pic .row{padding-left:4%;padding-top:5%;margin:0;}
+		.col-md-4{width:30%;height:335px;background: white;margin:1%;padding:0;}
+		.serviceitem{width:100%;height:100%;text-align:center;background: #171717;}
+		.serviceitem:hover{background: #212121}
+		.serviceitem a{width:80%;height:80%;display: block;margin:0 auto;padding:10%;}
+		.serviceitem a img{width:100%;}
+		.title10{font-size: 1.4em;color:white;}
+		.description{font-size: 0.8em;padding:0 20%;color:#595959;}
+		.button{width:300px;height:58px;border-radius: 50px;border: 1px solid white;margin:0 auto;text-align:center;line-height: 58px;margin-top:30px;}
+		.button a{color:#fdd947;font-size: 1.2em;}
+		
+
+		.head{width:100%;height:200px;text-align:center;}
+		.head h1{margin-top:30px;}
+		.head p{margin-top:15px;}
+		.head .list{margin-top:30px;}
+		.row{margin:0;}
+		.list .sss a{color:#999;margin-right:10px;border:1px solid rgba(100,100,100,.3);padding:8px 30px;}
+		.fotter{width:100%;height:80px;background: black;}
+		.fotter .fbut{text-align: center;line-height: 80px;}
+		.fotter .fbut a{color:#fdd947;font-size: 1.2em}
+		
+
+		.text{margin-top:30px;}
+		.text .row{margin:0;padding:0;background: #f3f3f3}
+		.text .row .col-md-6{padding-left: 0;text-align:center;}
+		.text .row .col-md-6 h2{margin-top:80px;}
+		.text .row .col-md-6 p{width:80%;margin:40px auto;}
+		.text .row .col-md-6 img{width:100%;}
+		.text .row .col-md-6 a{width:40%;height:50px;line-height: 50px;text-align:center;background: black;display: block;color:#fdd947;margin:0 auto;}
+		
+
+		.people{width:100%;height:650px;}
+		.people .row{padding-left:4%;padding-top:5%;margin:0;}
+		.people .col-md-4{width:30%;height:335px;background:#f3f3f3;margin:1%;padding:0;}
+		.people .p-button{width:300px;height:58px;margin:0 auto;text-align:center;line-height: 58px;margin-top:30px;background: black;}
+		.p-button a{color:#fdd947;font-size: 1.2em;}
+		.header{text-align:center;}
+		.header h2{margin-top:80px;}
+ 
+
+		.center{width:80%;margin:0 auto;}
+		.center .h{width:102px;height:108px;background: black;margin-top:-15px;text-align:center;}
+		.center .h span{color:white;display: block;}
+		.center .h span:nth-child(1){font-size: 2em;padding-top:20%;}
+		.center h3{font-size: 1.2em;padding-top: 10%}
+		.center p{width:100%;height:60px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;color:#a1a1a1;margin-top:10%;}
+		.h{transition: all 0.3s ease-in}
+		.people .row .col-md-4:hover{background: black;}
+		.center:hover>.h{height:120px;background:#fdd947 }
+		.center:hover>.h span:nth-child(1){color:black;padding-top:25%;}
+		.center:hover>.h span{color:black;}
+		.center:hover> h3{color:white;}
+ 
+
+		.bottom{width:100%;height:480px;background: black}
+		.b-b{width:80%;margin:0 auto;}
+		.b-b .row .index5-left{padding-top:80px;} 
+		.b-b .row .index5-right{padding-top:80px;}
+		.b-b .row .col-sm-6 p:nth-child(1){font-size: 2em;}
+		.b-b .row .col-sm-6 p:nth-child(2){color:#929292;}
+		.b-b .row .col-sm-6 .col-sm-6 p{color:#929292;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;display: block;}
+		.b-b .row .col-sm-6 .col-sm-6 h3{color:#fdd947;font-size: 1.2em;text-overflow: ellipsis; overflow: hidden;white-space: nowrap; display: block;}
+		.copy{width:50%;margin:50px auto;}
+		.a{color:#929292;}
+		.a span{margin:0 5px;}
+		@media screen and (max-width: 768px) {
+			.col-lg-6:nth-child(2){display: none}
+			.menu{display: block}
+			.carousel-caption h1{font-size: 1em;margin-top: 15%}
+            .carousel-caption p{display: none}
+            .carousel-caption div{display:none}
+			.col-md-4{width:96%;}
+			.pic{height:1200px;}
+			.pic .row{padding-left:3%;}
+			.button{width:200px;height:40px;line-height:40px;}
+			.list .sss{margin-left:10%;}
+			.list .sss a{float:left;}
+			.text .row .col-md-6{padding-right: 0}
+			.people .col-md-4{width:96%;}
+			.people .row{padding-left:3%;}
+			.p-button{width:200px;height:40px;line-height:40px;}
+			.p-button a{font-size: 1em;}
+			.people{height:1360px;}
+			.people .row .col-md-4{margin:40px 0;}
+			.bottom{height:800px;}
+			.copy{width:100%;margin:50px auto;}
+
+		}
+	</style>
+
 </head>
 <body>
-	<!-- 点击图片显示 -->
-	<div class="bla">
-					<div class="text1">
-								<div class="p"   style="display:block"><img src="images/portfolio_big_1.jpg" alt="">
-									<div> 
-										<div class="butto">
-													<button class="left">左</button>
-													<button class="right">右</button>
-										</div>
-										<p>portfolio_big_1.jpg</p> <span class="sp"><p>×</p></span> 
-									</div>
-								</div>
-								<div class="p sss"><img src="images/portfolio_big_2.jpg" alt="" class='ss'>
-									<div> 
-										<div class="butto">
-													<button class="left">左</button>
-													<button class="right">右</button>
-										</div>
-										<p>portfolio_big_2.jpg</p> <span class="sp"><p>×</p></span> 
-									</div>
-								</div>
-								<div class="p"><img src="images/portfolio_big_3.jpg" alt="">
-									<div> 
-										<div class="butto">
-													<button class="left">左</button>
-													<button class="right">右</button>
-										</div>
-										<p>portfolio_big_3.jpg</p> <span class="sp"><p>×</p></span> 
-									</div>
-								</div>
-								<div class="p"><img src="images/portfolio_big_4.jpg" alt="">
-									<div> 
-										<div class="butto">
-													<button class="left">左</button>
-													<button class="right">右</button>
-										</div>
-										<p>portfolio_big_4.jpg</p> <span class="sp"><p>×</p></span> 
-									</div>
-								</div>
-								<div class="p"><img src="images/portfolio_big_5.jpg" alt="">
-									<div> 
-										<div class="butto">
-													<button class="left">左</button>
-													<button class="right">右</button>
-										</div>
-										<p>portfolio_big_5.jpg</p> <span class="sp"><p>×</p></span> 
-									</div>
-								</div>								
-					</div>
-					<div class="bg"></div>
-	</div>
-	<!-- 左边菜单栏 -->
-	<div class="menu">
-		<div class="top">
-				<a href=""><b>Lazy</b>Boy</a>
-				<div><img src="images/1.jpg" alt=""></div>
-		</div>
-		<div class="content">
-				<ul>
-					<li>
-						<a href="#azero">				
-								<span class="rect" style="width:30px"></span>
-								<span class="circel"></span>
-								Home
-						</a></li>
-						<li>
-						<a href="#aone">
-								<span class="rect"></span>
-								<span class="circel"></span>
-								 Featured
-						</a></li>
-						<li>
-						<a href="#atwo">
-								<span class="rect"></span>
-								<span class="circel"></span>
-								Recent Work
-						</a></li>
-						<li>
-						<a href="#athree">
-								<span class="rect"></span>
-								<span class="circel"></span>
-								Presentation
-						</a></li>
-						<li>
-						<a href="#afour">
-								<span class="rect"></span>
-								<span class="circel"></span>
-								 Blog Entires
-						</a></li>
-						<li>
-						<a href="#afive">
-								<span class="rect"></span>
-								<span class="circel"></span>
-								 Contact Us
-						</a></li>
-				</ul>
-		</div>
-		<div class="line">
-				<div class="line-box">
-					<div class="line-left"><a href="login.html">登录/注册</a></div>
-				</div>		
-		</div>
-		<div class="bottom">
-			<ul>
-				<li>
-					<img src="images/Facebook.png" alt="">
-					<img src="images/Facebook (1).png" alt="">
-				</li>
-				<li>
-					<img src="images/Be.png" alt="">
-					<img src="images/Be (1).png" alt="">
-				</li>
-				<li>
-					<img src="images/微博.png" alt="">
-					<img src="images/微博 (1).png" alt="">
-				</li>
-				<li>
-					<img src="images/wifi.png" alt="">
-					<img src="images/wifi (1).png" alt="">
-				</li>
-			</ul>
-		</div>
-	</div>
-	<!-- 头部banner -->
-	<div class="header" name="azero" id="azero">
-			<div class="text">
-					<div class="t">
-							<h1>Welcome to my world<br></h1>
-							<p>Personality signature:青春是打开了就合不了的书，人生就是踏上了就回不了头的路</p>
-							<div class="reading">
-									<a href="#aone"><b>Get More</b></a>
-							</div>
-					</div>
+	<nav class="nav">
+		<div class="container">
+			<div class="row">
+	  			<div class="col-lg-6 col-md-5 col-sm-12"><a href=""><img src="img/logo.png" alt=""></a><span class="glyphicon glyphicon-list menu" aria-hidden="true"></span></div>
+	  			<div class="col-lg-6 col-md-7 col-sm-12">
+	  				<ul>
+	  					<li class="action"><a href="">网站首页</a></li>
+						<li><a href="">关于我们</a></li>
+						<li><a href="">我们的服务</a></li>
+						<li><a href="">产品中心</a></li>
+						<li><a href="">新闻中心</a></li>
+						<li><a href="">联系我们</a></li>
+	  				</ul>
+	  			</div>
+	  			<div class="nav-menu">
+	  				<ul>
+	  					<li class="action"><a href="">网站首页</a></li>
+						<li><a href="">关于我们</a></li>
+						<li><a href="">我们的服务</a></li>
+						<li><a href="">产品中心</a></li>
+						<li><a href="">新闻中心</a></li>
+						<li><a href="">联系我们</a></li>
+	  				</ul>
+	  			</div>
 			</div>
-			<span></span>
-			<div class="silde">
-					<div class="pic">
-						<!-- <button>&gt;</button> -->
-						<div class="box">
-								<div class="img"><img src="images/pic1.jpg" alt=""></div>
-						</div>
-					</div>
-					<div class="pic">
-								<div class="img"><img src="images/pic2.jpg" alt=""></div>
-								<div class="info"></div>				
-					</div>
-					<div class="pic">
-								<div class="img"><img src="images/pic3.jpg" alt=""></div>
-								<div class="info"></div>				
-					</div>
-			</div>
-	</div>
-	<!-- 中心轮播图 -->
-	<div class="center" name="aone" id="aone">
-			<div class="ccontent">
-					<div class="top">
-							<h1>Featured <br><b>Places</b></h1>
-							<p>有梦想的地方不会太遥远， <br> 
-									我的人生因为有他们而精彩，你呢？
-							</p>
-							<div><span><p>&lt;</p></span><span><p>&gt;</p></span></div>
-					</div>
-					<div class="banner">
-							<div class="bbb">
-								<div>
-									<div>
-										<img src="images/featured_1.jpg" alt="">
-										<div class="reading"><a href="#atwo">Continue Reading</a></div>									
-									</div>
-									<div class="feature">
-											<h4>Lorem ipsum dolor</h4>
-										 	<span>Proin et sapien</span>
-											<p>#1 Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed at massa turpis. Fusce ut pretium dui, vitae ullamcorper velit.</p>
-									</div>
-								</div>
-								<div>
-									<div>
-										<img src="images/featured_2.jpg" alt="">
-										<div class="reading"><a href="#atwo">Continue Reading</a></div>									
-									</div>
-									<div class="feature">
-											<h4>Phasellus a lacus ac odio</h4>
-										 	<span>Maximus</span>
-											<p>#2 Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed at massa turpis. Fusce ut pretium dui, vitae ullamcorper velit.</p>
-									</div>
-								</div>
-								<div>
-									<div>
-										<img src="images/featured_3.jpg" alt="">
-										<div class="reading"><a href="#atwo">Continue Reading</a></div>									
-									</div>
-									<div class="feature">
-											<h4>Proin sit amet fringilla</h4>
-										 	<span>Vulputate</span>
-											<p>#3 Aliquam mollis lacus eget metus efficitur lobortis. Suspendisse libero lacus, accumsan vitae commodo tristique, luctus gravida metus.</p>
-									</div>
-								</div>
-								<div>
-									<div>
-										<img src="images/featured_1.jpg" alt="">
-										<div class="reading"><a href="#atwo">Continue Reading</a></div>									
-									</div>
-									<div class="feature">
-											<h4>In volutpat augue lectus</h4>
-										 	<span>Elementum</span>
-											<p>#4 Aliquam mollis lacus eget metus efficitur lobortis. Suspendisse libero lacus, accumsan vitae commodo tristique, luctus gravida metus.</p>
-									</div>
-								</div>
-								<div>
-										<div>
-											<img src="images/featured_1.jpg" alt="">
-											<div class="reading"><a href="#atwo">Continue Reading</a></div>									
-										</div>
-										<div class="feature">
-												<h4>In volutpat augue lectus</h4>
-											 	<span>Elementum</span>
-												<p>#4 Aliquam mollis lacus eget metus efficitur lobortis. Suspendisse libero lacus, accumsan vitae commodo tristique, luctus gravida metus.</p>
-										</div>
-								</div>
-								<div>
-										<div>
-											<img src="images/featured_2.jpg" alt="">
-											<div class="reading"><a href="#atwo">Continue Reading</a></div>									
-										</div>
-										<div class="feature">
-												<h4>Cras commodo odio</h4>
-											 	<span>Aliquam</span>
-												<p>#5 Mauris lacinia pretium libero, ut tincidunt lacus molestie ornare. Phasellus a facilisis erat. Praesent eleifend nibh mauris, quis sodales lorem convallis pulvinar.</p>
-										</div>									
-								</div>
-								<div>
-										<div>
-											<img src="images/featured_3.jpg" alt="">
-											<div class="reading"><a href="#atwo">Continue Reading</a></div>									
-										</div>
-										<div class="feature">
-												<h4>Sed at massa turpis</h4>
-											 	<span>Curabitur</span>
-												<p>#6 Vestibulum tincidunt ornare ligula vel molestie. Curabitur hendrerit mauris mollis ipsum vulputate rutrum. Phasellus luctus odio eget dui imperdiet.</p>
-										</div>									
-								</div>
-								<div>
-										<div>
-											<img src="images/featured_1.jpg" alt="">
-											<div class="reading"><a href="#atwo">Continue Reading</a></div>									
-										</div>
-										<div class="feature">
-												<h4>Sed at massa turpis</h4>
-											 	<span>Curabitur</span>
-												<p>#6 Vestibulum tincidunt ornare ligula vel molestie. Curabitur hendrerit mauris mollis ipsum vulputate rutrum. Phasellus luctus odio eget dui imperdiet.</p>
-										</div>										
-								</div>
-								<div>
-										<div>
-											<img src="images/featured_3.jpg" alt="">
-											<div class="reading"><a href="#atwo">Continue Reading</a></div>
-										</div>
-										<div class="feature">
-												<h4>Sed at massa turpis</h4>
-											 	<span>Curabitur</span>
-												<p>#6 Vestibulum tincidunt ornare ligula vel molestie. Curabitur hendrerit mauris mollis ipsum vulputate rutrum. Phasellus luctus odio eget dui imperdiet.</p>
-										</div>										
-								</div>
-							</div>
-							<div class="circel">
-								<ul>
-									<li class="c"></li>
-									<li></li>
-									<li></li>
-								</ul>
-							</div>
-					</div>
-			</div>
-	</div>
-	<!-- 图片点击 -->
-	<div class="mainpic"  name="atwo" id="atwo">
-		<div class="main-top">
-				<h1>Recent
-					<br><b>Projects</b></h1>
-				<p>Praesent pellentesque efficitur magna,  <br> 
-						sed pellentesque neque malesuada vitae.
-				</p>
-		</div>	
-		<div class="picone pic"><a href=""><img src="images/portfolio_1.jpg" alt=""></a><div></div></div>
-		<div class="pictwo pic"><a href=""><img src="images/portfolio_2.jpg" alt=""></a><div></div></div>
-		<div class="picthree pic"><a href=""><img src="images/portfolio_3.jpg" alt=""></a><div></div></div>
-		<div class="picfour pic"><a href=""><img src="images/portfolio_4.jpg" alt=""></a><div></div></div>
-		<div class="picfive  pic" ><a href=""><img src="images/portfolio_5.jpg" alt=""></a><div></div></div>
-	</div>
-	<!-- 视频 -->
-	<div class="video" name="athree" id="athree">
-		<div class="main-top">
-				<h1>This is a <b>company</b> presentation.</h1>
-				<p class="one">Praesent pellentesque efficitur magna, sed pellentesque neque malesuada vitae.</p>
-				<p class="two">In eget ipsum sed lorem vehicula luctus. Curabitur non dolor rhoncus, hendrerit justo sit amet, vestibulum turpis. Pellentesque id auctor tellus, vel ultricies augue. Duis condimentum aliquet blandit. Fusce rhoncus et eros ut pharetra. Phasellus convallis ultricies ligula ac gravida.</p>
 		</div>
-		<div class="read">
-				<div class="reading"><a href="#afour">Continue Reading</a></div>	
-		</div>				
-		<div class="mp4">
-			<video id="movies"style="width: 100%; height: 100%; object-fit: fill" poster="images/video.jpg" controls>
-    			<source src="meida/volcano.mp4" type='video/mp4' >
-        	</video>
+	</nav>
+	<section class="banner">
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		  <ol class="carousel-indicators">
+		    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		  </ol>
+		  <div class="carousel-inner" role="listbox">
+		    <div class="item active">
+		      <img src="img/banner01.jpg" alt="...">
+		      <div class="carousel-caption">
+		        <h1>响应式网站模板，不同终端，同样精彩</h1>
+		        <p>全新推出「响应式网站模板」，移动端访客能够得到与电脑网站一样的体验，轻松找到在电脑网站上看到的内容，无论是在电脑、平板、手机上都可以访问到排版合适的网站，即便是微信等应用内置浏览器也是如此。</p>
+		        <div class="but"><a href="">了解更多</a></div>
+		      </div>
+		    </div>
+		    <div class="item">
+		      <img src="img/banner02.jpg" alt="...">
+		      <div class="carousel-caption">
+		        <h1>海量精美CmsEasy模板免费下载</h1>
+		        <p>cmseasy是一款基于 PHP+Mysql 架构的网站内容管理系统，也是一个 PHP 开发平台。 采用模块化方式开发，功能易用便于扩展，可面向大中型站点提供重量级网站建设解决方案。</p>
+		        <div class="but"><a href="">了解更多</a></div>
+		      </div>
+		    </div>
+			<div class="item">
+		      <img src="img/banner03.jpg" alt="...">
+		      <div class="carousel-caption">
+		       <h1>唯一内置推广模块的企业网站管理系统！</h1>
+		        <p>全国首家内置推广联盟模块的企业网站系统，为企业在营销推广方面，提供了非常便捷的方法和功能。通过推广联盟，企业可针对联盟会员进行统计外链发布数量，通过外链访问的流量统计，并可计算出通过外链而注册的企业用户数量。</p>
+		        <div class="but"><a href="">了解更多</a></div>
+		      </div>
+		    </div>
+		  </div>
+		  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
 		</div>
-	</div>
-	<!-- 选择 -->
-	<div class="choose" name="afour" id="afour">
-				<div class="choose-top">
-						<h1>Blog
-								<br><b>Entries</b></h1>
-								<p> Curabitur hendrerit mauris mollis ipsum vulputate rutrum.  <br> 
-									Phasellus luctus odio eget dui imperdiet.
-								</p>
+	</section>
+	<section class="pic">
+		<div class="row">
+		  <div class="col-md-4 col-sm-4">
+		  	<li class="serviceitem ">
+				<a target="_blank" href="">
+					<img alt="我们为什么这么做" src="img/14772950911848.png">
+					<div>
+					<p class="title10">我们为什么这么做</p>
+					<p class="description">打破传统模板模式，让所有企业能够在最短时间内拥有一套高端网站，让UEMO成为一种潮流！</p>
+					</div>
+				</a>
+			</li>
+		  </div>
+		  <div class="col-md-4 col-sm-4">
+			<li class="serviceitem ">
+				<a target="_blank" href="">
+					<img alt="我们为什么这么做" src="img/14772951373145.png">
+					<div>
+					<p class="title10">我们在做什么？</p>
+					<p class="description">我们用10年的建站经验，打造出适合中小企业的高端企业模板-UEMO，精致的设计，人性化的后台</p>
+					</div>
+				</a>
+			</li>
+		  </div>
+		  <div class="col-md-4 col-sm-4">
+			<li class="serviceitem ">
+				<a target="_blank" href="">
+					<img alt="我们为什么这么做" src="img/14772952000181.png">
+					<div>
+					<p class="title10">我们是谁？</p>
+					<p class="description">我们是UELIKE(北京优艺客文化传播有限公司)，是一个有着研发精神和创新精神的团队。</p>
+					</div>
+				</a>
+			</li>
+		  </div>
+		</div>
+		<div class="button">
+			<a href="">了解更多</a>
+		</div>
+	</section>
+	<section class="picture">
+		<div class="head">
+				<h1>产品中心</h1>
+				<p>RPODUCT</p>
+				<div class="list">
+					<div class="sss">
+						<a href="">建筑设计</a>
+						<a href="">交通会展</a>
+						<a href="">室内设计</a>
+						<a href="">其他设计</a>
+					</div>
 				</div>
-				<div class="choose-center">
-					<div class="cctop">
-						<ul>
-							<li class="month"><a href="javascript:void(0);">July 2018</a></li>
-							<li><a href="javascript:void(0);">June 2018</a></li>
-							<li><a href="javascript:void(0);">May 2018</a></li>
-							<li><a href="javascript:void(0);">April 2018</a></li>
-						</ul>
-					</div>
-					<div class="choose-one   show">
-						<div class="text-content">
-								<div class="left">
-									<img src="images/blog_1.jpg" alt="">
-								</div>
-								<div class="right">
-		                                                    <h4>Integer ultrices augue eu</h4>
-		                                                    <span>11 July 2018</span>
-		                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>           
-		                                                    <div class="reading">
-		                                                        <a href="#afive">Continue Reading</a>
-		                                                    </div>
-								</div>
-						</div>
-						<div class="text-content">
-								<div class="left">
-									<img src="images/blog_2.jpg" alt="">
-								</div>
-								<div class="right">
-		                                                    <h4>Cras commodo odio ut</h4>
-		                                                    <span>16 July 2018</span>
-		                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>           
-		                                                    <div class="reading">
-		                                                        <a href="#afive">Continue Reading</a>
-		                                                    </div>
-								</div>
-						</div>
-						<div class="text-content">
-								<div class="left">
-									<img src="images/blog_3.jpg" alt="">
-								</div>
-								<div class="right">
-		                                                    <h4>Cras commodo odio ut</h4>
-		                                                    <span>16 July 2018</span>
-		                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>           
-		                                                    <div class="reading">
-		                                                        <a href="#afive">Continue Reading</a>
-		                                                    </div>
-								</div>
-						</div>
-					</div>
-					<div class="choose-one">
-						<div class="text-content">
-								<div class="left">
-									<img src="images/blog_2.jpg" alt="">
-								</div>
-								<div class="right">
-		                                                    <h4>Lorem ipsum dolor sit</h4>
-		                                                    <span>26 July 2018</span>
-		                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>           
-		                                                    <div class="reading">
-		                                                        <a href="#afive">Continue Reading</a>
-		                                                    </div>
-								</div>
-						</div>
-						<div class="text-content">
-								<div class="left">
-									<img src="images/blog_1.jpg" alt="">
-								</div>
-								<div class="right">
-		                                                    <h4>Sed at massa turpis</h4>
-		                                                    <span>16 July 2018</span>
-		                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>           
-		                                                    <div class="reading">
-		                                                        <a href="#afive">Continue Reading</a>
-		                                                    </div>
-								</div>
-						</div>
-						<div class="text-content">
-								<div class="left">
-									<img src="images/blog_3.jpg" alt="">
-								</div>
-								<div class="right">
-		                                                    <h4>Sed at massa turpis</h4>
-		                                                    <span>16 July 2018</span>
-		                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>           
-		                                                    <div class="reading">
-		                                                        <a href="#afive">Continue Reading</a>
-		                                                    </div>
-								</div>
-						</div>
-					</div>		
-					<div class="choose-one">
-						<div class="text-content">
-								<div class="left">
-									<img src="images/blog_3.jpg" alt="">
-								</div>
-								<div class="right">
-		                                                    <h4>Cras commodo odio ut</h4>
-		                                                    <span>16 July 2018</span>
-		                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>           
-		                                                    <div class="reading">
-		                                                        <a href="#afive">Continue Reading</a>
-		                                                    </div>
-								</div>
-						</div>
-						<div class="text-content">
-								<div class="left">
-									<img src="images/blog_1.jpg" alt="">
-								</div>
-								<div class="right">
-		                                                    <h4>Sed at massa turpis</h4>
-		                                                    <span>14 July 2018</span>
-		                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>           
-		                                                    <div class="reading">
-		                                                        <a href="#afive">Continue Reading</a>
-		                                                    </div>
-								</div>
-						</div>
-						<div class="text-content">
-								<div class="left">
-									<img src="images/blog_2.jpg" alt="">
-								</div>
-								<div class="right">
-		                                                    <h4>Integer ultrices augue eu</h4>
-		                                                    <span>16 July 2018</span>
-		                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>           
-		                                                    <div class="reading">
-		                                                        <a href="#afive">Continue Reading</a>
-		                                                    </div>
-								</div>
-						</div>
-					</div>	
-					<div class="choose-one">
-						<div class="text-content">
-								<div class="left">
-									<img src="images/blog_2.jpg" alt="">
-								</div>
-								<div class="right">
-		                                                    <h4>Integer ultrices augue eu</h4>
-		                                                    <span>16 July 2018</span>
-		                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>           
-		                                                    <div class="reading">
-		                                                        <a href="#afive">Continue Reading</a>
-		                                                    </div>
-								</div>
-						</div>
-						<div class="text-content">
-								<div class="left">
-									<img src="images/blog_3.jpg" alt="">
-								</div>
-								<div class="right">
-		                                                    <h4>Cras commodo odio ut</h4>
-		                                                    <span>16 July 2018</span>
-		                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>           
-		                                                    <div class="reading">
-		                                                        <a href="#afive">Continue Reading</a>
-		                                                    </div>
-								</div>
-						</div>
-						<div class="text-content">
-								<div class="left">
-									<img src="images/blog_1.jpg" alt="">
-								</div>
-								<div class="right">
-		                                                    <h4>Cras commodo odio ut</h4>
-		                                                    <span>16 July 2018</span>
-		                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>           
-		                                                    <div class="reading">
-		                                                        <a href="#afive">Continue Reading</a>
-		                                                    </div>
-								</div>
-						</div>
-					</div>				
-				</div>
-	</div>
-	<!-- 底部输入框 -->
-	<div class="footer" name="afive" id="afive">
-		<div class="footer-top">
-				<h1>Contact
-					<br><b> Sentra</b></h1>
-				<p>Curabitur hendrerit mauris mollis ipsum vulputate rutrum. <br> 
-                       Phasellus luctus odio eget dui imperdiet.
-				</p>
 		</div>
-		<div class="input"><input type="text" placeholder="you name ..." ></div>			
-		<div class="input"><input type="text" placeholder="you email..."></div>			
-		<div class="input"><input type="text" placeholder="subject..."></div>			
-		<textarea name="" id="" placeholder="you message..."></textarea>
-		<div class="but"><button>Send Message Now</button></div>
-	</div>	
-	<div class="fb"><p>Copyright © 2018 Company Name . Design: Sentra More Templates  - Collect from Lazyboy</p></div>
+		<div class="row">
+	  		<div class="col-xs-6 col-md-3">
+		   		<a href="#" class="thumbnail">
+		        <img src="img/14772969560968.jpg" alt="...">
+	   			</a>
+  			</div>
+  			<div class="col-xs-6 col-md-3">
+		   		<a href="#" class="thumbnail">
+		        <img src="img/14772965421749.jpg" alt="...">
+	   			</a>
+  			</div>
+  			<div class="col-xs-6 col-md-3">
+		   		<a href="#" class="thumbnail">
+		        <img src="img/14772970685477.jpg" alt="...">
+	   			</a>
+  			</div>
+  			<div class="col-xs-6 col-md-3">
+		   		<a href="#" class="thumbnail">
+		        <img src="img/14772962441103.jpg" alt="...">
+	   			</a>
+  			</div>
+		</div>
+		<div class="fotter">
+			<div class="fbut">
+				<a href="">了解更多</a>
+			</div>
+		</div>
+	</section>
+	<section class="text">
+		<div class="row">
+		  	<div class="col-md-6"><img src="img/14772982283207.jpg" alt=""></div>
+		  	<div class="col-md-6">
+			<h2>关于我们</h2>
+			<h4>about_us</h4>
+			<p>建筑设计研究院有限公司（原名上海市民用建筑设计院）成立于1953年，是一家具有工程咨询、建筑工程设计、城市规划、建筑智能化及系统工程设计资质的综合性建筑设计院，也是中国乃至世界最具规模的设计公司之一,被评为建筑设计行业“高新技术企业”，通过国际ISO9001质量保证体系认证，在国内外享有较高的知名度。累计完成2万多项工程的设计和咨询，作品遍及全国31个省市自治区及全球20余个国家和地区，其中700多项工程设计、科研项目、规范标准获国家、建设部以及上海市优秀设计和科技进步奖。60年的积淀与发展将上海院的历史与国家、城市发展的</p>
+			<a href="/demo/business-template/V375/about_us" class="more22">了解更多</a>
+			</div>
+		</div>
+	</section>
+	<section class="people">
+		<div class="header">
+			<h2>新闻中心</h2>
+			<p>news</p>
+		</div>
+		<div class="row">
+		  <div class="col-md-4 col-sm-4">
+		  	<div class="center">
+					<div class="h">
+						<span>10-24</span>
+						<span>2016</span>
+					</div>
+					<h3> 上海院中标北京华信医院改</h3>
+					<p>上海建筑设计研究院在医疗建筑领域又添新作，原创中标北京华信医院改扩建工程（二期综合楼）。在目前建筑市场下行环境下，经过我院经营管理部和专业设计团队的共同努力与拼搏，上海院的原创方案经国内医疗领域专家的严格评选下，一路过关斩将，力胜同行设计机</p>
+		  	</div>
+		  </div>
+		  <div class="col-md-4 col-sm-4">
+			<div class="center">
+					<div class="h">
+						<span>10-25</span>
+						<span>2017</span>
+					</div>
+					<h3>和谐统一 融合互通 上海</h3>
+					<p>近日，华建集团上海建筑设计研究院有限公司在济川展览馆规划建筑方案设计竞标中一举拔得头筹，在与众多国内重量级设计机构的竞争中脱引而出，成功中标该项目。济川展览馆基地位于江苏省泰兴市济川药业厂区的东南部，基地紧邻城市主干</p>
+		  	</div>
+		  </div>
+		  <div class="col-md-4 col-sm-4">
+			<div class="center">
+					<div class="h">
+						<span>10-27</span>
+						<span>2018</span>
+					</div>
+					<h3>一座世界乒乓文化新地标即</h3>
+					<p>张继科、马龙、许昕等队员的花式球技再一次为他们带来不少“迷弟迷妹”！也更加证明了乒乓球作为中国国球不可撼动的地位~那小伙伴们对我们的国球文化到底了解多少呢？日前，国际乒联博物馆和中国乒乓球博物馆破土动工啦！一年后，一</p>
+		  	</div>
+		  </div>
+		</div>
+		<div class="p-button">
+			<a href="">了解更多</a>
+		</div>
+	</section>
+	<section class="bottom">
+		<div class="b-b">
+			<div class="row">
+			  <div class="col-sm-6 index5-left">
+					<p class="title10">联系我们</p>
+					<p class="subtitle">lian-xi-wo-men</p>
+					<div id="" class="col-sm-6 wow" data-wow-delay=".2s">
+						<h3 class="ellipsis name">高端建筑设计公司响应式网站模板</h3>
+						<p class="ellipsis add"><span>地 址：</span>高端建筑设计公司</p>
+						<p class="ellipsis add"><span>电 话：</span>888-88888888</p>
+						<p class="ellipsis add"><span>传 真：</span>888-88888888</p>
+						<p class="ellipsis add"><span>邮 箱：</span>admin@admin.com</p>
+						<p class="ellipsis add"><span>邮政编码：</span>136000</p>
+						<div>
+						<a class="fl" target="_blank" href="#"><i class="fa fa-weibo"></i></a>
+						<a class="fl" target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=888888&amp;site=qq&amp;menu=yes"><i class="fa fa-qq"></i></a>
+						<a id="mpbtn" class="fl" href="#"><i class="fa fa-weixin"></i></a>
+						</div>
+					</div>
+			  </div>
+			  <div class="col-sm-6 index5-right">
+					<form method="post" action="" name="form1"  role="form">
+						<div class="form-group">
+							<input name="my_mingzi" id="my_mingzi" type="email" class="form-control" placeholder="名字">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="my_xinxiang" id="my_xinxiang" placeholder="信箱">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="my_dianhua" id="my_dianhua" placeholder="电话">
+						</div>
+						<div class="form-group">
+							<textarea name="my_liuyanneirong" id="my_liuyanneirong" class="form-control textarea">留言内容</textarea>
+						</div>
+						<div class="form-group">
+							<div id="verifycode_embed"></div>
+						</div>
+						<input type="submit" name="submit" value="提交" class="btn btn-warning">
+					</form>
+			  </div>
+			</div>
+			<div class="copy">
+				<p class="a"><span>高端建筑设计公司响应式网站模板 Copyright ©</span><span>京ICP备88888888号</span><span>Powered by <a href="#" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a></span></p>
+			</div>
+		</div>
+	</section>
+	<script>
+		$(function(){
+			$('.col-lg-6 ul li').mouseenter(function(){
+				$(this).addClass('action');
+				$(this).siblings().removeClass('action')
+			});
+			$('.nav-menu ul li').mouseenter(function(){
+				console.log(4555)
+				$(this).addClass('action');
+				$(this).siblings().removeClass('action')
+			});
+			var m_num=0;
+			$('.menu').click(function(){
+				m_num++;
+				console.log(222)
+				if(m_num%2==1){
+					$('.nav-menu').show()
+				}else{$('.nav-menu').hide()}
+				
+			})
+			$('.col-md-4').mouseenter(function(){
+				var num=$(this).index();
+				$('.title10').eq(num).css('color','#fdd947')
+			})
+			$('.col-md-4').mouseleave(function(){
+				var num=$(this).index();
+				$('.title10').eq(num).css('color','white')
+			})
+			
+			
+		})
+
+
+	</script>
 </body>
 </html>
